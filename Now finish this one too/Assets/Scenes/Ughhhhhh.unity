@@ -294,7 +294,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952822756}
-  m_LocalRotation: {x: 2.227e-42, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 5.287e-42, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 987552018}
   - component: {fileID: 987552017}
   - component: {fileID: 987552029}
+  - component: {fileID: 987552030}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -788,6 +789,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knifeTransf: {fileID: 1135670282}
   playerSprite: {fileID: 987552025}
+--- !u!114 &987552030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987552016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7f933004c448341ac0ce3181793623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 1135670285}
+  weaponAmmo: {fileID: 1135670286}
 --- !u!1001 &1135670281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -904,8 +919,23 @@ MonoBehaviour:
   knifeEmitter: {fileID: 1467735395}
   throwForce: 5
   playerObj: {fileID: 987552016}
-  objectsInsideRadius: []
-  playerControllerScript: {fileID: 0}
+  weaponAmmo: {fileID: 1135670286}
+--- !u!114 &1135670286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135670283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2bde78c47b6eb40856843873de4137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxKnifeAmmo: 5
+  reloadTime: 1
+  currentlyReloading: 0
+  currentKnifeAmmo: 0
 --- !u!1 &1353017156
 GameObject:
   m_ObjectHideFlags: 0

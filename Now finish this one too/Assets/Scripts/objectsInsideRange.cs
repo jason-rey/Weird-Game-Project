@@ -28,7 +28,6 @@ public class objectsInsideRange : MonoBehaviour
            
             if (tagList.Contains(gameObject.tag))
             {
-                Debug.Log(gameObject.name);
                 continue;               
             }
 

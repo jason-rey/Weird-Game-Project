@@ -2,25 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fireKnife : MonoBehaviour
+public class fireKnife : MonoBehaviour , IWeaponFireable
 {
     public GameObject knifePrefab;
     public Transform knifeRotation;
     public GameObject knifeEmitter;
     public float throwForce;
     public GameObject playerObj;
-    public List<GameObject> objectsInsideRadius;
-    public playerController playerControllerScript;
+    public ammoManager weaponAmmo;
 
     private Vector3 mousePos;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void FireWeapon()
     {
         Vector3 mousePosRaw = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
         mousePos = Camera.main.ScreenToWorldPoint(mousePosRaw);
@@ -30,23 +23,15 @@ public class fireKnife : MonoBehaviour
         shootDirection = shootDirection.normalized;
         //Debug.Log(shootDirection * throwForce);
         shootDirection *= throwForce;
-        Debug.DrawRay(transform.position, new Vector3(shootDirection.x,shootDirection.y) * throwForce);
+        Debug.DrawRay(transform.position, new Vector3(shootDirection.x, shootDirection.y) * throwForce);
 
         Vector3 finalKnifeForce = new Vector3(shootDirection.x, shootDirection.y, shootDirection.z);
-        //Debug.Log(shootDirection);
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            ShootKnife(finalKnifeForce, knifeRotation);
-        }
-    }
-
-    void ShootKnife(Vector3 directionForce,Transform knifeRotation)
-    {
         GameObject firedKnife = GameObject.Instantiate(knifePrefab, knifeEmitter.transform.position,knifeRotation.transform.rotation);
         Rigidbody2D thrownRgbd = firedKnife.GetComponent<Rigidbody2D>();
 
 
-        thrownRgbd.velocity += new Vector2(directionForce.x * throwForce, directionForce.y * throwForce);       
+        thrownRgbd.velocity += new Vector2(finalKnifeForce.x * throwForce, finalKnifeForce.y * throwForce) ;       
     }
+
 }
