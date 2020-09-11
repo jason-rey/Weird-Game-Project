@@ -25,7 +25,6 @@ public class theWorldSoundController : MonoBehaviour
 
         if (timeController.playStoppingAudio)
         {
-            Debug.Log("play");
             timeStartSound.Play();
         }
 

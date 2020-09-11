@@ -13,7 +13,7 @@ public class objectsInsideRange : MonoBehaviour
 
     public GameObject[] objectsInScene;
 
-    public string[] TagList = { "Ball", "Box" };
+    public List<string> tagList = new List<string>();
 
     private void Awake()
     {
@@ -25,17 +25,15 @@ public class objectsInsideRange : MonoBehaviour
             {
                 continue;
             }
-
-            if (gameObject.tag != "theWorld" && gameObject.tag != "Player" && gameObject.tag != "playerProjectile" && gameObject.tag != "MainCamera" && gameObject.tag != "cameraComponent" && gameObject.tag != "knifeComponent" && gameObject.tag != this.tag && gameObject.name != "cm")
+           
+            if (tagList.Contains(gameObject.tag))
             {
-                stoppedObjects.Add(gameObject);
-                
+                Debug.Log(gameObject.name);
+                continue;               
             }
 
-            if (gameObject.tag == "playerProjectile")
-            {
-                stoppedKnives.Add(gameObject);
-            }
+            stoppedObjects.Add(gameObject);
+
         }
     }
 
@@ -44,7 +42,6 @@ public class objectsInsideRange : MonoBehaviour
     {
         if (collision.tag == "playerProjectile")
         {
-            Debug.Log("this");
             if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
             {
                 stoppedKnives.Add(collision.gameObject);

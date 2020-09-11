@@ -299,9 +299,17 @@ MonoBehaviour:
   stoppedObjects: []
   stoppedKnives: []
   objectsInScene: []
-  TagList:
-  - Ball
-  - Box
+  tagList:
+  - untagged
+  - theWorld
+  - Player
+  - playerProjectile
+  - MainCamera
+  - cameraComponent
+  - knifeComponent
+  - timeStopBubble
+  - cm
+  - Cube
 --- !u!1 &7157480934078882937
 GameObject:
   m_ObjectHideFlags: 0
