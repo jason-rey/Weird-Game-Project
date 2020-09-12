@@ -130,7 +130,7 @@ public class knifeCollisions : MonoBehaviour
 
         if (timeController.timeIsStopped)
         {
-            //Debug.Log("waiting");
+            yield return new WaitForSeconds(timeController.timeStopDuration);
         }
 
         if (!timeController.timeIsStopped)

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499991645914824942}
   - component: {fileID: 1499991645914824943}
-  - component: {fileID: 2972637182556022495}
+  - component: {fileID: 3975732256652753115}
   m_Layer: 0
   m_Name: The World Prefab
   m_TagString: knifeComponent
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2972637182556022495
+--- !u!114 &3975732256652753115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499991645914824928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e43384ce3615947a03c834b8cbbe8d, type: 3}
+  m_Script: {fileID: 11500000, guid: 71cd3e4d112248a46a1a7769fd13fcee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timeController: {fileID: 0}

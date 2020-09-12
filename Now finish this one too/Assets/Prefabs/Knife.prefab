@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeController: {fileID: 0}
-  knifeRemoveDelay: 5
+  knifeRemoveDelay: 0.5
   knifeCollider: {fileID: 7163381919080902528}
   shootDirection: {x: 0, y: 0, z: 0}
   knifePrefab: {fileID: 7824641798464534135}
