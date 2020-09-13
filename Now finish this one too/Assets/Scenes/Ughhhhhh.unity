@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &41905055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1274221233149780927, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}
+  m_PrefabInstance: {fileID: 1274221231693692636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &673614050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 641943585326463564, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}
+  m_PrefabInstance: {fileID: 1274221231693692636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &930847695
 GameObject:
   m_ObjectHideFlags: 3
@@ -294,7 +304,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952822756}
-  m_LocalRotation: {x: 1.9196e-41, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 2.0273e-41, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -897,6 +907,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1274221232827140817, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}
       propertyPath: throwForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274221232827140817, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 7824641798464534135, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
+    - target: {fileID: 1274221232827140817, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}
+      propertyPath: projectileRotation
+      value: 
+      objectReference: {fileID: 673614050}
+    - target: {fileID: 1274221232827140817, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}
+      propertyPath: weaponEmitter
+      value: 
+      objectReference: {fileID: 41905055}
+    - target: {fileID: 1274221232827140817, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}
+      propertyPath: shootForce
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1274221232827140818, guid: b04e1c79e759f274d9efcc2f33301c02, type: 3}

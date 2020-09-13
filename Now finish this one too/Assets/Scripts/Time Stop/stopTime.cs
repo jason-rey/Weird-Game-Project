@@ -106,6 +106,12 @@ public class stopTime : MonoBehaviour
             Rigidbody2D currentBody = stopRange.stoppedKnives[tempListCount-1].GetComponent<Rigidbody2D>();
             //knifeCollisions knifeCol = stopRange.stoppedKnives[tempListCount-1].GetComponent<knifeCollisions>();
 
+            if (currentBody.velocity == Vector2.zero)
+            {
+                Debug.Log("zeeeeeerroooo");
+                currentBody.velocity = stopRange.stoppedKnives[tempListCount - 1].GetComponent<knifeCollisions>().storedVelocity;
+                Debug.Log(currentBody.velocity);
+            }
 
             stoppedKnifeVelocities.Add(currentBody.velocity);
 
@@ -147,8 +153,16 @@ public class stopTime : MonoBehaviour
             if (knife.GetComponent<Rigidbody2D>() != null)
             {
                 Rigidbody2D currentBody = knife.GetComponent<Rigidbody2D>();
+
+                //if (stoppedKnifeVelocities[objectIndex] == Vector3.zero)
+                //{
+                //    Debug.Log("applying");
+                //    stoppedKnifeVelocities[objectIndex] = Vector3.one * GameObject.Find("Knife").GetComponent<fireProjectile>().shootForce;
+                //}
+
                 currentBody.constraints = RigidbodyConstraints2D.FreezeRotation;
                 currentBody.velocity = stoppedKnifeVelocities[objectIndex];
+
             }
 
             if (objectIndex + 1 <= stoppedKnifeVelocities.Count-1 && stoppedKnifeVelocities.Count != 0)

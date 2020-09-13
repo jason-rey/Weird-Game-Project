@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &7163381919080902528
 BoxCollider2D:
@@ -146,11 +146,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeController: {fileID: 0}
-  stickKnife: {fileID: 0}
   knifeRemoveDelay: 5
   knifeCollider: {fileID: 7163381919080902528}
   shootDirection: {x: 0, y: 0, z: 0}
-  knifePrefab: {fileID: 7824641798464534135}
+  projectilePrefab: {fileID: 7824641798464534135}
   detectionSphere: {fileID: 8458784854308107531}
   knifeHitDetectionLength: 1
   aboutToCollide: 0

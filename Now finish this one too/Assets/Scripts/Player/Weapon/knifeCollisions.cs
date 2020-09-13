@@ -5,7 +5,6 @@ using UnityEngine;
 public class knifeCollisions : MonoBehaviour
 {
     public stopTimeController timeController;
-    public detectionSphere stickKnife;
 
     public float knifeRemoveDelay;
 
@@ -16,11 +15,12 @@ public class knifeCollisions : MonoBehaviour
     private Vector3 mousePos;
     public Vector3 shootDirection;
     private Vector3 globalScale;
-    public GameObject knifePrefab;
+    public GameObject projectilePrefab;
     public GameObject detectionSphere;
     public float knifeHitDetectionLength = 1;
     public bool aboutToCollide = false;
     public float knifeDamage;
+    public Vector2 storedVelocity;
 
     private BoxCollider2D prefabCollider;
     private bool onlyOnce = true;
@@ -38,7 +38,7 @@ public class knifeCollisions : MonoBehaviour
         mousePos.z = 0;
         shootDirection = (mousePos - this.transform.position);
         globalScale = new Vector3(5, 5, 2);
-        prefabCollider = knifePrefab.GetComponent<BoxCollider2D>();
+        prefabCollider = projectilePrefab.GetComponent<BoxCollider2D>();
         rgbd = GetComponent<Rigidbody2D>();
     }
 

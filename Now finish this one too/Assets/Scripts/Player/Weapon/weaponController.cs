@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class weaponController : MonoBehaviour
 {
-    public fireKnife weapon;
+    public fireProjectile weapon;
     public ammoManager weaponAmmo;
     // Start is called before the first frame update
     void Start()

@@ -19,7 +19,6 @@ public class objectHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentHealth);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
