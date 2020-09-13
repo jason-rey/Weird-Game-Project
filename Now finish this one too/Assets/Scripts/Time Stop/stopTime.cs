@@ -52,7 +52,12 @@ public class stopTime : MonoBehaviour
         else if (!timeController.timeIsStopped)
         {
             //Debug.Log("continuing time");
-            ContinueObjectMovement();
+
+            if (onlyOnce2)
+            {
+                ContinueObjectMovement();
+                onlyOnce2 = false;
+            }
         }
 
         objectCount = stopRange.stoppedObjects.Count;
@@ -116,7 +121,6 @@ public class stopTime : MonoBehaviour
 
     private void ContinueObjectMovement()
     {
-
         foreach (GameObject stoppedObject in stopRange.stoppedObjects)
         {
             Rigidbody2D currentBody = stoppedObject.GetComponent<Rigidbody2D>();
@@ -154,6 +158,7 @@ public class stopTime : MonoBehaviour
         }
 
         done = true;
+
     }
             
 }

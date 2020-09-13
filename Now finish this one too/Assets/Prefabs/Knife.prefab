@@ -151,7 +151,7 @@ MonoBehaviour:
   knifeCollider: {fileID: 7163381919080902528}
   shootDirection: {x: 0, y: 0, z: 0}
   knifePrefab: {fileID: 7824641798464534135}
-  detectionSphere: {fileID: 0}
+  detectionSphere: {fileID: 8458784854308107531}
   knifeHitDetectionLength: 1
   aboutToCollide: 0
   knifeDamage: 1
@@ -166,8 +166,8 @@ GameObject:
   - component: {fileID: 8764597094242259065}
   - component: {fileID: 4148094500423881388}
   - component: {fileID: 1232791990306485066}
-  - component: {fileID: 3011266803143837304}
   - component: {fileID: 4025728261155141122}
+  - component: {fileID: 2171719752181303872}
   m_Layer: 2
   m_Name: Sphere
   m_TagString: playerProjectile
@@ -238,22 +238,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!58 &3011266803143837304
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8458784854308107531}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &4025728261155141122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,3 +252,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knife: {fileID: 7824641798464534135}
   hitObject: 0
+--- !u!61 &2171719752181303872
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8458784854308107531}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000029802322, y: -0.7344387}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.408754, y: 1.5635313}
+  m_EdgeRadius: 0

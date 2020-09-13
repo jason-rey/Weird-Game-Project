@@ -37,6 +37,7 @@ public class detectionSphere : MonoBehaviour
             }
 
             GameObject middleMan = new GameObject("Middle Object");
+            middleMan.tag = "playerProjectile";
             middleMan.layer = 2;
             knifeBody.velocity = Vector3.zero;
             knifeBody.isKinematic = true;
