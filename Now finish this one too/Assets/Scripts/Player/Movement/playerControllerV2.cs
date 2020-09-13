@@ -50,7 +50,7 @@ public class playerControllerV2 : MonoBehaviour
 
    public bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector3.down, (playerCollider.bounds.size.y / 2) + 0.1F,9);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector3.down, (playerCollider.bounds.size.y / 2) + 0.1F);
         Debug.DrawRay(this.transform.position, Vector3.down * ((playerCollider.bounds.size.y / 2) + 0.5F));
         return hit;
     } 

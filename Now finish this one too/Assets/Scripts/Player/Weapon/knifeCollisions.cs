@@ -5,8 +5,9 @@ using UnityEngine;
 public class knifeCollisions : MonoBehaviour
 {
     public stopTimeController timeController;
+    public detectionSphere stickKnife;
 
-    [SerializeField] private float knifeRemoveDelay;
+    public float knifeRemoveDelay;
 
     public BoxCollider2D knifeCollider;
     private CapsuleCollider2D playerCollider;
@@ -19,7 +20,7 @@ public class knifeCollisions : MonoBehaviour
     public GameObject detectionSphere;
     public float knifeHitDetectionLength = 1;
     public bool aboutToCollide = false;
-    public GameObject stoppedKnifeHitRadius;
+    public float knifeDamage;
 
     private BoxCollider2D prefabCollider;
     private bool onlyOnce = true;
@@ -54,34 +55,22 @@ public class knifeCollisions : MonoBehaviour
         }
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + 0.1f),9);
-        if (hit)
-        {
-            if (onlyOnce)
-            {
-                if (hit.collider.tag != "Player" && hit.collider.tag != "timeStopBubble" && hit.collider.tag != "playerProjectile")
-                {
-                    GameObject middleMan = new GameObject("Middle Object");
-                    middleMan.layer = 2;
-                    knifeBody.velocity = Vector3.zero;
-                    knifeBody.isKinematic = true;
-                    knifeCollider.enabled = false;
-                    middleMan.transform.SetParent(hit.collider.transform, true);
-
-                    transform.SetParent(middleMan.transform, true);
+        //if (hit)
+        //{
+        //    if (onlyOnce)
+        //    {
+        //        if (hit.collider.tag != "Player" && hit.collider.tag != "timeStopBubble" && hit.collider.tag != "playerProjectile")
+        //        {
+        //            aboutToCollide = true;
+                    
+        //        }
+        //        onlyOnce = false;
+        //    }
 
 
-                    knifeBody.isKinematic = true;
-                    knifeCollider.enabled = false;
-                    StartCoroutine("DestroyKnife");
+        //}
 
-                }
-                onlyOnce = false;
-            }
-
-
-        }
-
-        Debug.DrawRay(transform.position, shootDirection.normalized * ((knifeCollider.bounds.size.y) + knifeHitDetectionLength), Color.red);
+        Debug.DrawRay(transform.position, shootDirection.normalized * ((knifeCollider.bounds.size.y)/2 + knifeHitDetectionLength), Color.red);
         RaycastHit2D detectCollision = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + knifeHitDetectionLength), 9);
 
         if (!timeController.timeIsStopped)
@@ -136,7 +125,7 @@ public class knifeCollisions : MonoBehaviour
         }
     }
 
-    private IEnumerator DestroyKnife()
+    public IEnumerator DestroyKnife()
     {
         yield return new WaitForSeconds(knifeRemoveDelay);
 
