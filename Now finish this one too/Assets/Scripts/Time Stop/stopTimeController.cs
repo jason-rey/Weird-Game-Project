@@ -72,9 +72,10 @@ public class stopTimeController : MonoBehaviour
         }
 
         yield return new WaitForSeconds(timeStopDuration);
+        timeIsStopped = false;
         onlyOnce = true;
         startingTime = true;
-        playStoppingAudio = true;
+        playStoppingAudio = true;       
         yield return 0;
         playStoppingAudio = false;
         fullSize = false;
@@ -86,10 +87,10 @@ public class stopTimeController : MonoBehaviour
             radius.transform.localScale = new Vector3(currentSize, currentSize, 0);
         }
 
-        if (currentSize <= 0)
-        {            
-            timeIsStopped = false;
-        }
+        //if (currentSize <= 0)
+        //{            
+        //    timeIsStopped = false;
+        //}
 
         yield return 0;
 

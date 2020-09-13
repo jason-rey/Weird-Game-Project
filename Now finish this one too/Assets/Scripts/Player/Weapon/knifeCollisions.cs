@@ -45,6 +45,14 @@ public class knifeCollisions : MonoBehaviour
     {
         //Debug.DrawRay(this.transform.position, shootDirection.normalized * ((knifeCollider.bounds.size.y / 2) + 60));
 
+        if (timeController.timeIsStopped)
+        {
+            prefabCollider.isTrigger = false;
+        }   else
+        {
+            prefabCollider.isTrigger = true;
+        }
+
         RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + 0.1f),9);
         if (hit)
         {
@@ -77,8 +85,8 @@ public class knifeCollisions : MonoBehaviour
         RaycastHit2D detectCollision = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + knifeHitDetectionLength), 9);
 
         if (!timeController.timeIsStopped)
-        {            
-            //stoppedKnifeHitRadius.SetActive(false);
+        {
+            Physics2D.IgnoreCollision(playerCollider, knifeCollider);
         }
 
         if (timeController.timeIsStopped)
@@ -103,10 +111,15 @@ public class knifeCollisions : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            Physics2D.IgnoreCollision(playerCollider, knifeCollider);
-        }
+        //if (other.gameObject.tag == "Player")
+        //{
+        //    Debug.Log("player");
+        //    if (!timeController.timeIsStopped)
+        //    {
+        //        Debug.Log("ignoring");
+        //        Physics2D.IgnoreCollision(playerCollider, knifeCollider);
+        //    }
+        //}
 
         //if (!timeController.timeIsStopped)
         //{
@@ -118,7 +131,6 @@ public class knifeCollisions : MonoBehaviour
 
         if (other.gameObject.CompareTag("playerProjectile"))
         {
-            Debug.Log("oooyeahhh");
             Physics2D.IgnoreCollision(knifeCollider, other.collider);
 
         }

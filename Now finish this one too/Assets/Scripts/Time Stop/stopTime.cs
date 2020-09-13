@@ -126,8 +126,8 @@ public class stopTime : MonoBehaviour
                 //Debug.Log(stoppedObject.name);
                 currentBody.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
-
             currentBody.velocity = storedVelocities[objectIndex];
+           
 
             if (objectIndex + 1 <= storedVelocities.Count - 1 && storedVelocities.Count != 0)
             {

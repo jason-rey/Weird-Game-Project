@@ -12,6 +12,7 @@ TagManager:
   - knifeComponent
   - theWorld
   - Cube
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -25,9 +26,9 @@ TagManager:
   - TimeStopBubble
   - Player Projectile
   - TimeStopBounds
-  - 
-  - 
-  - 
+  - Enemy
+  - Dashing
+  - Enemy Projectile
   - 
   - 
   - 

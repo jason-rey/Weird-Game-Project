@@ -309,7 +309,7 @@ MonoBehaviour:
   - knifeComponent
   - timeStopBubble
   - cm
-  - Cube
+  - UI
 --- !u!1 &7157480934078882937
 GameObject:
   m_ObjectHideFlags: 0
