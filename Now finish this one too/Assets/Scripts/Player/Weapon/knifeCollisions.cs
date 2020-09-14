@@ -25,6 +25,7 @@ public class knifeCollisions : MonoBehaviour
     private BoxCollider2D prefabCollider;
     private bool onlyOnce = true;
     private Rigidbody2D rgbd;
+    private int layerMask;
 
     private void Awake()
     {
@@ -40,19 +41,57 @@ public class knifeCollisions : MonoBehaviour
         globalScale = new Vector3(5, 5, 2);
         prefabCollider = projectilePrefab.GetComponent<BoxCollider2D>();
         rgbd = GetComponent<Rigidbody2D>();
+
+      
     }
 
     private void Update()
     {
+        layerMask = ~(LayerMask.GetMask("Time Stop Bubble","Player Projectile"));
         //Debug.DrawRay(this.transform.position, shootDirection.normalized * ((knifeCollider.bounds.size.y / 2) + 60));
 
         if (timeController.timeIsStopped)
         {
+<<<<<<< Updated upstream:Now finish this one too/Assets/Scripts/Player/Weapon/knifeCollisions.cs
             prefabCollider.isTrigger = false;
         }   else
         {
             prefabCollider.isTrigger = true;
         }
+=======
+            if (onlyOnce)
+            {
+                if (hit.collider.tag != "Player" && hit.collider.tag != "timeStopBubble" && hit.collider.tag != "playerProjectile")
+                {
+                    GameObject middleMan = new GameObject("Middle Object");
+                    middleMan.layer = 2;
+                    knifeBody.velocity = Vector3.zero;
+                    knifeBody.isKinematic = true;
+                    knifeCollider.enabled = false;
+                    middleMan.transform.SetParent(hit.collider.transform, true);
+
+<<<<<<< Updated upstream:Now finish this one too/Assets/Scripts/knifeCollisions.cs
+                    transform.SetParent(middleMan.transform, true);
+=======
+        //RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + 0.1f),9);
+        //if (hit)
+        //{
+        //    if (onlyOnce)
+        //    {
+        //        if (hit.collider.tag != "Player" && hit.collider.tag != "timeStopBubble" && hit.collider.tag != "playerProjectile")
+        //        {
+        //            aboutToCollide = true;
+                    
+        //        }
+        //        onlyOnce = false;
+        //    }
+>>>>>>> Stashed changes:Now finish this one too/Assets/Scripts/Player/Weapon/knifeCollisions.cs
+
+
+                    knifeBody.isKinematic = true;
+                    knifeCollider.enabled = false;
+                    StartCoroutine("DestroyKnife");
+>>>>>>> Stashed changes:Now finish this one too/Assets/Scripts/knifeCollisions.cs
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + 0.1f),9);
         //if (hit)
@@ -68,10 +107,19 @@ public class knifeCollisions : MonoBehaviour
         //    }
 
 
+<<<<<<< Updated upstream:Now finish this one too/Assets/Scripts/Player/Weapon/knifeCollisions.cs
         //}
+=======
+<<<<<<< Updated upstream:Now finish this one too/Assets/Scripts/knifeCollisions.cs
+        }
+>>>>>>> Stashed changes:Now finish this one too/Assets/Scripts/knifeCollisions.cs
 
         Debug.DrawRay(transform.position, shootDirection.normalized * ((knifeCollider.bounds.size.y)/2 + knifeHitDetectionLength), Color.red);
         RaycastHit2D detectCollision = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + knifeHitDetectionLength), 9);
+=======
+        Debug.DrawRay(transform.position, shootDirection.normalized * ((knifeCollider.bounds.size.y)/2 + knifeHitDetectionLength), Color.red);
+        RaycastHit2D detectCollision = Physics2D.Raycast(transform.position, shootDirection.normalized, ((knifeCollider.bounds.size.y / 2) + knifeHitDetectionLength),layerMask);
+>>>>>>> Stashed changes:Now finish this one too/Assets/Scripts/Player/Weapon/knifeCollisions.cs
 
         if (!timeController.timeIsStopped)
         {
@@ -84,6 +132,7 @@ public class knifeCollisions : MonoBehaviour
 
             if (detectCollision)
             {
+                Debug.Log("ohboyhereitcomes");
                 aboutToCollide = true;
                 rgbd.velocity = Vector3.zero;
                 rgbd.constraints = RigidbodyConstraints2D.FreezeAll;

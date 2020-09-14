@@ -23,13 +23,26 @@ TagManager:
   - 
   - 
   - Player
-  - TimeStopBubble
+  - Time Stop Bubble
   - Player Projectile
   - TimeStopBounds
+<<<<<<< Updated upstream
   - Enemy
   - Dashing
   - Enemy Projectile
+=======
+<<<<<<< Updated upstream
   - 
+  - 
+  - 
+>>>>>>> Stashed changes
+  - 
+=======
+  - Enemy
+  - Dashing
+  - Enemy Projectile
+  - Environment
+>>>>>>> Stashed changes
   - 
   - 
   - 

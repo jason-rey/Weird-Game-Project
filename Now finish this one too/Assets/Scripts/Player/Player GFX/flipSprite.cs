@@ -22,13 +22,13 @@ public class flipSprite : MonoBehaviour
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane);
 
 
-        if (mousePos.x > 950)
+        if (mousePos.x > 500)
         {
 //            knifeTransf.rotation = Quaternion.Euler(new Vector3(knifeTransf.rotation.x, knifeTransf.rotation.y, -knifeTransf.rotation.z));
             playerSprite.flipX = false;
         }
 
-        if (mousePos.x < 950)
+        if (mousePos.x < 500)
         {
             playerSprite.flipX = true;
         }

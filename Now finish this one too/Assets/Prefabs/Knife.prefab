@@ -153,7 +153,15 @@ MonoBehaviour:
   detectionSphere: {fileID: 8458784854308107531}
   knifeHitDetectionLength: 1
   aboutToCollide: 0
+<<<<<<< Updated upstream
   knifeDamage: 1
+=======
+<<<<<<< Updated upstream
+  stoppedKnifeHitRadius: {fileID: 0}
+=======
+  knifeDamage: 1
+  storedVelocity: {x: 0, y: 0}
+>>>>>>> Stashed changes
 --- !u!1 &8458784854308107531
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +175,11 @@ GameObject:
   - component: {fileID: 1232791990306485066}
   - component: {fileID: 4025728261155141122}
   - component: {fileID: 2171719752181303872}
+<<<<<<< Updated upstream
   m_Layer: 2
+=======
+  m_Layer: 10
+>>>>>>> Stashed changes
   m_Name: Sphere
   m_TagString: playerProjectile
   m_Icon: {fileID: 0}
@@ -277,3 +289,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.408754, y: 1.5635313}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

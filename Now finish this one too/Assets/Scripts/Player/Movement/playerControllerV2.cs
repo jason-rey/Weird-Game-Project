@@ -20,13 +20,21 @@ public class playerControllerV2 : MonoBehaviour
     private Vector3 targetPosition;
     private bool isDashing;
     private bool canDash;
+<<<<<<< Updated upstream
 
+=======
+    private int layerMask;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
     {
         playerCollider = GetComponent<CapsuleCollider2D>();
         playerBody = GetComponent<Rigidbody2D>();
+<<<<<<< Updated upstream
+=======
+        layerMask = ~(LayerMask.GetMask("Player"));
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -50,8 +58,13 @@ public class playerControllerV2 : MonoBehaviour
 
    public bool IsGrounded()
     {
+<<<<<<< Updated upstream
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector3.down, (playerCollider.bounds.size.y / 2) + 0.1F);
         Debug.DrawRay(this.transform.position, Vector3.down * ((playerCollider.bounds.size.y / 2) + 0.5F));
+=======
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.down, (playerCollider.bounds.size.y / 2) + 0.5F,layerMask);
+        Debug.DrawRay(this.transform.position, Vector2.down * ((playerCollider.bounds.size.y / 2) + 0.5F));
+>>>>>>> Stashed changes
         return hit;
     } 
 
