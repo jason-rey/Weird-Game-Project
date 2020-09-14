@@ -10,6 +10,7 @@ public class enemyAI : MonoBehaviour
 
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
+    public float pathRefreshTime;
 
     private Path path;
     private int currentWaypoint = 0;
@@ -30,7 +31,7 @@ public class enemyAI : MonoBehaviour
         Player = GameObject.Find("Player");
         timeController = Player.GetComponent<stopTimeController>();
 
-        InvokeRepeating("UpdatePath", 0f, 1f);        
+        InvokeRepeating("UpdatePath", 0f, pathRefreshTime);        
     }
 
     void UpdatePath()
