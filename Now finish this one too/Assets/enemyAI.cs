@@ -9,12 +9,8 @@ public class enemyAI : MonoBehaviour
     public Transform target;
 
     public float speed = 200f;
-<<<<<<< Updated upstream
-    public float nextWaypointDistance = 3f;
-    public float pathRefreshTime;
 
-    private Path path;
-=======
+
     public float enemyJumpForce;
     public float nextWaypointDistance = 3f;
     public float pathRefreshTime;
@@ -23,26 +19,24 @@ public class enemyAI : MonoBehaviour
     public float jumpDistanceToTarget;
 
     public Path path;
->>>>>>> Stashed changes
+
     private int currentWaypoint = 0;
     private bool reachedEndOfPath = false;
 
     private Seeker seeker;
     private Rigidbody2D rgbd;
-<<<<<<< Updated upstream
-=======
+
     private Collider2D enemyCollider;
->>>>>>> Stashed changes
+
 
     private GameObject Player;
     private stopTimeController timeController;
 
-<<<<<<< Updated upstream
-=======
+
     private int layerMask;
 
     //public List<Vector3> listOfPoints = new List<Vector3>();
->>>>>>> Stashed changes
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,12 +45,11 @@ public class enemyAI : MonoBehaviour
         rgbd = GetComponent<Rigidbody2D>();
         Player = GameObject.Find("Player");
         timeController = Player.GetComponent<stopTimeController>();
-<<<<<<< Updated upstream
-=======
+
         enemyCollider = GetComponent<Collider2D>();
 
         layerMask = ~(LayerMask.GetMask("Enemy"));
->>>>>>> Stashed changes
+
 
         InvokeRepeating("UpdatePath", 0f, pathRefreshTime);        
     }
@@ -78,14 +71,13 @@ public class enemyAI : MonoBehaviour
         }
     }
 
-<<<<<<< Updated upstream
-=======
+
     private void Update()
     {
         //listOfPoints = path.vectorPath;
     }
 
->>>>>>> Stashed changes
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -103,11 +95,11 @@ public class enemyAI : MonoBehaviour
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rgbd.position).normalized;
         Vector2 targetVector = direction * speed * Time.deltaTime;
 
-<<<<<<< Updated upstream
+
         if (!timeController.timeIsStopped)
         {
             transform.Translate(new Vector3(targetVector.x,0));
-=======
+
 
         if (!timeController.timeIsStopped)
         {
@@ -121,24 +113,25 @@ public class enemyAI : MonoBehaviour
                 Debug.Log("want to jump");
                 Jump();
             }
->>>>>>> Stashed changes
+
         }
 
         float distance = Vector2.Distance(rgbd.position, path.vectorPath[currentWaypoint]);
 
-<<<<<<< Updated upstream
-=======
+
         IsGrounded();
 
->>>>>>> Stashed changes
+
         if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
         }
-<<<<<<< Updated upstream
+
   
-    }
-=======
+        }
+
+        Debug.Log(IsGrounded());
+
 
     }
 
@@ -160,5 +153,4 @@ public class enemyAI : MonoBehaviour
 
 
 
->>>>>>> Stashed changes
 }

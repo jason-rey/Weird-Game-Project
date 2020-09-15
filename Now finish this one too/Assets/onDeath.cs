@@ -14,6 +14,7 @@ public class onDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(objectHealth.currentHealth);
         if (objectHealth.currentHealth <= 0)
         {
             OnDeath();

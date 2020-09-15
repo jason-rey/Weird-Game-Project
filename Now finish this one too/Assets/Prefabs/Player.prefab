@@ -356,7 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243608674b0397844aa38b638223f611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dash: {fileID: 0}
   horizontalInput: 0
   timeController: {fileID: 1274221232400639944}
   runSpeed: 3
@@ -476,9 +475,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1274221233149780920}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Knife Emitter
-  m_TagString: Untagged
+  m_TagString: knifeComponent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,11 +526,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aeae05edee1c6d45bfcc2efea8cc1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knifePrefab: {fileID: 7824641798464534135, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
-  knifeRotation: {fileID: 641943585326463564}
-  knifeEmitter: {fileID: 1274221233149780927}
-  throwForce: 5
-  playerObj: {fileID: 1274221232400639948}
+  projectilePrefab: {fileID: 7824641798464534135, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
+  projectileRotation: {fileID: 641943585326463564}
+  weaponEmitter: {fileID: 1274221233149780927}
+  shootForce: 5
   weaponAmmo: {fileID: 1274221232827140818}
 --- !u!114 &1274221232827140818
 MonoBehaviour:
@@ -616,9 +614,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: knifeComponent
       objectReference: {fileID: 0}
+    - target: {fileID: 7824641798464534135, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458784854308107531, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458784854308107531, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8458784854308107531, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
+      propertyPath: m_TagString
+      value: knifeComponent
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7163381919080902528, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
     - {fileID: 9031126738199144503, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
+    - {fileID: 5210479763109510441, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a163b1e2812c3e438d82b779c4198a6, type: 3}
 --- !u!1 &9023040157263789218 stripped
 GameObject:

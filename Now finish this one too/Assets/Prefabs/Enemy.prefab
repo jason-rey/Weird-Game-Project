@@ -17,15 +17,9 @@ GameObject:
   - component: {fileID: 7324667158278622095}
   - component: {fileID: 7324667158278622094}
   - component: {fileID: 8654819007961499354}
-<<<<<<< Updated upstream
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-=======
   m_Layer: 12
   m_Name: Enemy
   m_TagString: Enemy
->>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,16 +152,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 5
-<<<<<<< Updated upstream
-  nextWaypointDistance: 3
-  pathRefreshTime: 0.25
-=======
   enemyJumpForce: 15
   nextWaypointDistance: 3
   pathRefreshTime: 0.25
   jumpBuffer: 2.5
   jumpDistanceToTarget: 5
->>>>>>> Stashed changes
 --- !u!114 &7324667158278622094
 MonoBehaviour:
   m_ObjectHideFlags: 0

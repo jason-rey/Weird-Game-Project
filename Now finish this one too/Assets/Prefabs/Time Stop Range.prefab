@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: -9197304163153137550}
   - component: {fileID: 45672051972196246}
   - component: {fileID: 7514852372157110501}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Time Stop Range
   m_TagString: timeStopBubble
   m_Icon: {fileID: 0}

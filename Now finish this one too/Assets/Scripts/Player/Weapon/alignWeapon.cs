@@ -21,7 +21,8 @@ public class alignWeapon : MonoBehaviour
     void Update() 
     {
 //        emitterTransf.position = this.transform.position;
-
+        
+        
         if (playerSprite.flipX == true)
         {
             transform.localPosition = new Vector3(-0.25f, -0.05f, playerTransf.position.z);

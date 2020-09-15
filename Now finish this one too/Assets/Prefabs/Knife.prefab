@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4298947698822095467}
   - component: {fileID: 6020191673275791473}
   - component: {fileID: 7163381919080902528}
-  - component: {fileID: 6009697907265356566}
-  m_Layer: 10
+  - component: {fileID: 5210479763109510441}
+  m_Layer: 9
   m_Name: Knife
   m_TagString: playerProjectile
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.060303755, y: 0.13048097}
   m_EdgeRadius: 0
---- !u!114 &6009697907265356566
+--- !u!114 &5210479763109510441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,22 +146,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeController: {fileID: 0}
-  knifeRemoveDelay: 5
+  knifeRemoveDelay: 1
   knifeCollider: {fileID: 7163381919080902528}
   shootDirection: {x: 0, y: 0, z: 0}
   projectilePrefab: {fileID: 7824641798464534135}
   detectionSphere: {fileID: 8458784854308107531}
   knifeHitDetectionLength: 1
   aboutToCollide: 0
-<<<<<<< Updated upstream
-  knifeDamage: 1
-=======
-<<<<<<< Updated upstream
-  stoppedKnifeHitRadius: {fileID: 0}
-=======
-  knifeDamage: 1
+  knifeDamage: 0
   storedVelocity: {x: 0, y: 0}
->>>>>>> Stashed changes
 --- !u!1 &8458784854308107531
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,11 +168,7 @@ GameObject:
   - component: {fileID: 1232791990306485066}
   - component: {fileID: 4025728261155141122}
   - component: {fileID: 2171719752181303872}
-<<<<<<< Updated upstream
-  m_Layer: 2
-=======
-  m_Layer: 10
->>>>>>> Stashed changes
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: playerProjectile
   m_Icon: {fileID: 0}
@@ -289,7 +278,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.408754, y: 1.5635313}
   m_EdgeRadius: 0
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
